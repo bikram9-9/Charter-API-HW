@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -23,18 +25,27 @@ public class TransactionImpl {
     }
 
     //retrieve transactions last three months
-    public List<Transaction> getPreviousThreeMonths(){
+    public List<RetailTransaction> getPreviousThreeMonths(){
         LocalDate now = LocalDate.now();
-        LocalDate threeMonthsAgo = now.minusMonths(3);
-        Date date = Date.valueOf(threeMonthsAgo);
-        return transactionRepo.getTransactionsAfter(date);
+        int month = now.getMonth().getValue();
+        return transactionRepo.getTransactionsAfter(month-3);
     }
 
     //calculate points of these transactions return list of Transactions, CustomerIds
-    private List<CustomerResponse> getTotalPoints(List<Transaction> transactions){
+    private List<CustomerResponse> getTotalPoints(List<RetailTransaction> transactions){
         List<CustomerResponse> list = new ArrayList<>();
-        transactions.forEach( t -> {
-        });
+        //Group By Months, Map of Customer_id, TotalInMonth
+        CustomerResponse res = new CustomerResponse();
+//        final double[] higherVal = {0.0};
+               transactions.stream().map(t ->{
+                    res.setFirstName(t.getCustomer().getFirstname());
+                    res.setLastName(t.getCustomer().getLastName());
+                    res.setMonth(t.getMonth());
+//                    higherVal[0] = 0.04;
+                    list.add(res);
+                    return res;
+                }
+                );
         return list;
     }
 

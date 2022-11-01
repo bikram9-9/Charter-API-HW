@@ -19,11 +19,13 @@ public class RetailTransaction {
 
     private Date date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    private int month;
+
+    @ManyToOne
     private Customer customer;
 
     //-------------------------
-    public RetailTransaction(long id, Double amount, Date date, Customer customer) {
+    public RetailTransaction(long id, Double amount, Date date, int month,Customer customer) {
         this.id = id;
         this.amount = amount;
         this.date = date;
@@ -32,6 +34,14 @@ public class RetailTransaction {
 
     public RetailTransaction() {
 
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
     }
 
     public long getId() {
