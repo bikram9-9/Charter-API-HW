@@ -1,34 +1,57 @@
 package com.charter.dto;
 
 
-import lombok.Data;
+import com.sun.istack.NotNull;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.Objects;
 
 @Entity
-@Data
 public class Customer {
+    public Customer(long id, String firstname, String lastName) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastName = lastName;
+    }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
-    private Integer id;
+    @NotNull
+    private long id;
+
+    public Customer() {
+
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     private String firstname;
 
     private String lastName;
 
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinTable(
-            name = "customer_transaction",
-            joinColumns = {
-                    @JoinColumn(name = "customer_id",referencedColumnName = "customer_id",nullable = false,updatable = false)
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "transaction_id",referencedColumnName = "transaction_id")
-
-            })
-    Set<RetailTransaction> retailTransactionSet;
 }
