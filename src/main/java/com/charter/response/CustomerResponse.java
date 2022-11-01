@@ -8,28 +8,29 @@ import org.springframework.stereotype.Component;
 
 public class CustomerResponse {
 
-    private int month;
+    private long id;
     private String firstName;
     private String lastName;
-    private long monthPoints;
+    private MonthlyPoints monthlyPoints;
     private long totalPoints;
 
-    public CustomerResponse(int month, String firstName, String lastName,long monthPoints, long totalPoints) {
-        this.month = month;
+    public CustomerResponse(long id, String firstName, String lastName, MonthlyPoints monthlyPoints, long totalPoints) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.monthlyPoints = monthlyPoints;
         this.totalPoints = totalPoints;
     }
 
     public CustomerResponse(){
 
     }
-    public int getMonth() {
-        return month;
+    public long getId() {
+        return id;
     }
 
-    public void setMonth(int month) {
-        this.month = month;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -48,12 +49,12 @@ public class CustomerResponse {
         this.lastName = lastName;
     }
 
-    public long getMonthPoints() {
-        return monthPoints;
+    public MonthlyPoints getMonthlyPoints() {
+        return monthlyPoints;
     }
 
-    public void setMonthPoints(long monthPoints) {
-        this.monthPoints = monthPoints;
+    public void setMonthlyPoints(MonthlyPoints monthlyPoints) {
+        this.monthlyPoints = monthlyPoints;
     }
 
     public long getTotalPoints() {
@@ -63,5 +64,6 @@ public class CustomerResponse {
     public void setTotalPoints(long totalPoints) {
         this.totalPoints = totalPoints;
     }
+
 
 }

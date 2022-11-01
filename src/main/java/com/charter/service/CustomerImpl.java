@@ -2,6 +2,7 @@ package com.charter.service;
 
 import com.charter.dao.CustomerRepository;
 import com.charter.dto.Customer;
+import com.charter.dto.RetailTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,6 @@ public class CustomerImpl {
         }
         return result;
     }
+
 
 }

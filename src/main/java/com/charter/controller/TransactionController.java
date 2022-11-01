@@ -21,8 +21,9 @@ public class TransactionController {
     public TransactionController(TransactionImpl transactionImpl){
         this.transactionImpl = transactionImpl;
     }
+
     @GetMapping("/trans")
-    public ResponseEntity<Transaction> getAllTransactions(){
+    public ResponseEntity<RetailTransaction> getAllTransactions(){
         ResponseEntity result = ResponseEntity.ok(transactionImpl.getPreviousThreeMonths());
         return result;
     }
@@ -30,5 +31,10 @@ public class TransactionController {
     @PostMapping("/trans")
     public ResponseEntity<RetailTransaction> createTransaction(@RequestBody RetailTransaction retailTransaction){
         return ResponseEntity.ok(transactionImpl.saveTransaction(retailTransaction));
+    }
+
+    @GetMapping("/points")
+    public ResponseEntity<RetailTransaction> getAllPointsDetails(){
+        return ResponseEntity.ok(transactionImpl.)
     }
 }
