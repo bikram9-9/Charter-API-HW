@@ -1,0 +1,83 @@
+{
+    "customers":[ {
+        "customerId": "123",
+        "customerName": "John Smith",
+        "transactions": [
+            {
+            "transactionId": "4745",
+            "amount": "190.0",
+            "date": "2022-09-09"
+            },
+            {
+                "transactionId": "4745",
+                "amount": "120.0",
+                "date": "2022-09-09"
+            },
+             {
+                "transactionId": "4745",
+                "amount": "160.0",
+                "date": "2022-09-09"
+            }]
+        },
+        {
+            "customerId": "124",
+            "customerName": "Don West",
+            "transactions": [
+                {
+                    "transactionId": "4745",
+                    "amount": "180.0",
+                    "date": "2022-09-09"
+                },
+                {
+                    "transactionId": "4745",
+                    "amount": "200.0",
+                    "date": "2022-09-09"
+                },
+                {
+                    "transactionId": "4745",
+                    "amount": "220.0",
+                    "date": "2022-09-09"
+                }]
+        },
+        {
+            "customerId": "125",
+            "customerName": "Dave Smith",
+            "transactions": [
+                {
+                    "transactionId": "4745",
+                    "amount": "90.0",
+                    "date": "2022-09-09"
+                },
+                {
+                    "transactionId": "4745",
+                    "amount": "60.0",
+                    "date": "2022-09-09"
+                },
+                {
+                    "transactionId": "4745",
+                    "amount": "190.0",
+                    "date": "2022-09-09"
+                }]
+        },
+        {
+            "customerId": "126",
+            "customerName": "Bikram Singh",
+            "transactions": [
+                {
+                    "transactionId": "4745",
+                    "amount": "140.0",
+                    "date": "2022-06-09"
+                },
+                {
+                    "transactionId": "4745",
+                    "amount": "130.0",
+                    "date": "2022-09-09"
+                },
+                {
+                    "transactionId": "4745",
+                    "amount": "20.0",
+                    "date": "2022-09-09"
+                }]
+        }
+        ]
+}

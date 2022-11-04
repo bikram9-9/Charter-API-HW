@@ -7,6 +7,7 @@ import java.util.List;
 
 public class MonthlyPoints {
 
+    // <Month, points>
     private HashMap<Integer,Integer> monthlyPoints = new HashMap<Integer, Integer>();
 
     public HashMap<Integer, Integer> getMonthlyPoints() {
