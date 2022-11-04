@@ -5,7 +5,6 @@
 <ul>
 <li> {url}/points - to get the CustomerResponse Object</li>
 <li> {url}/getAll - get all the customer and transaction data</li>
-<li> </li>
 </ul>
 <h3> Following is the format the data is stored in </h3> 
 
